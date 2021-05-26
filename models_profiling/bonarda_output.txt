@@ -1,0 +1,109 @@
+[+] vgg19 -  Layers: 26 - Split Points: 25 - Loading took: 2.3871824741363525
+[-] Benchmarking normal execution - 4.670626401901245
+[-] Benchmarking individual layers - 4.282784700393677
+[-] NE: 0.19792771339416504 - SUM: 0.15459322929382324 - % Change: -21.89409626232731
+[+] Benchmarking vgg19 took: 11.34116530418396
+
+[+] xception -  Layers: 134 - Split Points: 14 - Loading took: 2.0914218425750732
+[-] Benchmarking normal execution - 3.446572780609131
+[-] Benchmarking individual layers - 5.1058478355407715
+[-] NE: 0.1557096242904663 - SUM: 0.15922260284423828 - % Change: 2.256108811372343
+[+] Benchmarking xception took: 10.645366668701172
+
+[+] resnet50 -  Layers: 177 - Split Points: 24 - Loading took: 2.820528745651245
+[-] Benchmarking normal execution - 3.024740219116211
+[-] Benchmarking individual layers - 4.833081960678101
+[-] NE: 0.13893818855285645 - SUM: 0.13988637924194336 - % Change: 0.6824550535479119
+[+] Benchmarking resnet50 took: 10.679751634597778
+
+[+] resnet101 -  Layers: 347 - Split Points: 41 - Loading took: 5.085740327835083
+[-] Benchmarking normal execution - 5.860622406005859
+[-] Benchmarking individual layers - 9.511155366897583
+[-] NE: 0.2718513011932373 - SUM: 0.26902222633361816 - % Change: -1.0406699718564738
+[+] Benchmarking resnet101 took: 20.46107840538025
+
+[+] resnet152 -  Layers: 517 - Split Points: 58 - Loading took: 7.422308683395386
+[-] Benchmarking normal execution - 8.603364706039429
+[-] Benchmarking individual layers - 13.908612966537476
+[-] NE: 0.4009772539138794 - SUM: 0.39776039123535156 - % Change: -0.8022556509449146
+[+] Benchmarking resnet152 took: 29.938184022903442
+
+[+] resnet50v2 -  Layers: 192 - Split Points: 16 - Loading took: 3.040436267852783
+[-] Benchmarking normal execution - 2.976750135421753
+[-] Benchmarking individual layers - 4.575225114822388
+[-] NE: 0.13501739501953125 - SUM: 0.13421261310577393 - % Change: -0.5960579476747512
+[+] Benchmarking resnet50v2 took: 10.593938112258911
+
+[+] resnet101v2 -  Layers: 379 - Split Points: 16 - Loading took: 4.77299690246582
+[-] Benchmarking normal execution - 5.847834348678589
+[-] Benchmarking individual layers - 8.83510446548462
+[-] NE: 0.27395498752593994 - SUM: 0.2651432752609253 - % Change: -3.2164817821322913
+[+] Benchmarking resnet101v2 took: 19.459437608718872
+
+[+] resnet152v2 -  Layers: 566 - Split Points: 16 - Loading took: 7.113554954528809
+[-] Benchmarking normal execution - 8.775465726852417
+[-] Benchmarking individual layers - 13.161447763442993
+[-] NE: 0.40340280532836914 - SUM: 0.39814138412475586 - % Change: -1.3042599441841958
+[+] Benchmarking resnet152v2 took: 29.05462145805359
+
+[+] inception_v3 -  Layers: 313 - Split Points: 19 - Loading took: 3.749174118041992
+[-] Benchmarking normal execution - 4.775976896286011
+[-] Benchmarking individual layers - 8.359685897827148
+[-] NE: 0.21928656101226807 - SUM: 0.22283947467803955 - % Change: 1.6202149595353887
+[+] Benchmarking inception_v3 took: 16.88701105117798
+
+[+] inceptionresnet_v2 -  Layers: 782 - Split Points: 61 - Loading took: 9.153908967971802
+[-] Benchmarking normal execution - 11.261287689208984
+[-] Benchmarking individual layers - 18.245599031448364
+[-] NE: 0.5219719409942627 - SUM: 0.5235733985900879 - % Change: 0.3068091347543884
+[+] Benchmarking inceptionresnet_v2 took: 38.66652536392212
+
+[+] mobilenet -  Layers: 93 - Split Points: 92 - Loading took: 1.0458378791809082
+[-] Benchmarking normal execution - 1.3907017707824707
+[-] Benchmarking individual layers - 2.957517623901367
+[-] NE: 0.06284523010253906 - SUM: 0.07391560077667236 - % Change: 17.61529181462261
+[+] Benchmarking mobilenet took: 5.3950514793396
+
+[+] vgg16 -  Layers: 23 - Split Points: 22 - Loading took: 2.1874802112579346
+[-] Benchmarking normal execution - 3.264979600906372
+[-] Benchmarking individual layers - 3.2728710174560547
+[-] NE: 0.14025580883026123 - SUM: 0.13513827323913574 - % Change: -3.6487156102880363
+[+] Benchmarking vgg16 took: 8.725733518600464
+
+[+] mobilenetv2 -  Layers: 157 - Split Points: 66 - Loading took: 2.7981317043304443
+[-] Benchmarking normal execution - 2.2366926670074463
+[-] Benchmarking individual layers - 4.140995025634766
+[-] NE: 0.09816455841064453 - SUM: 0.1080780029296875 - % Change: 10.098802133426602
+[+] Benchmarking mobilenetv2 took: 9.177408933639526
+
+[+] densenet121 -  Layers: 429 - Split Points: 22 - Loading took: 4.926428318023682
+[-] Benchmarking normal execution - 5.358438014984131
+[-] Benchmarking individual layers - 8.941857814788818
+[-] NE: 0.248907208442688 - SUM: 0.24717116355895996 - % Change: -0.6974666963603653
+[+] Benchmarking densenet121 took: 19.22997283935547
+
+[+] densenet169 -  Layers: 597 - Split Points: 22 - Loading took: 7.185179948806763
+[-] Benchmarking normal execution - 7.1478588581085205
+[-] Benchmarking individual layers - 12.024062395095825
+[-] NE: 0.33149397373199463 - SUM: 0.32895970344543457 - % Change: -0.764499655311667
+[+] Benchmarking densenet169 took: 26.360959768295288
+
+[+] densenet201 -  Layers: 709 - Split Points: 22 - Loading took: 8.577248334884644
+[-] Benchmarking normal execution - 8.779321908950806
+[-] Benchmarking individual layers - 14.565490245819092
+[-] NE: 0.4094916582107544 - SUM: 0.40395355224609375 - % Change: -1.3524343789709974
+[+] Benchmarking densenet201 took: 31.926706075668335
+
+[+] nasnetlarge -  Layers: 1041 - Split Points: 5 - Loading took: 13.181219100952148
+[-] Benchmarking normal execution - 23.256166696548462
+[-] Benchmarking individual layers - 31.328787565231323
+[-] NE: 1.0726109743118286 - SUM: 1.0595427751541138 - % Change: -1.2183540417437229
+[+] Benchmarking nasnetlarge took: 67.77373909950256
+
+[+] nasnetmobile -  Layers: 771 - Split Points: 5 - Loading took: 9.174782991409302
+[-] Benchmarking normal execution - 9.865745544433594
+[-] Benchmarking individual layers - 15.872706651687622
+[-] NE: 0.4631561040878296 - SUM: 0.4545931816101074 - % Change: -1.8488199555496578
+[+] Benchmarking nasnetmobile took: 34.91883587837219
+
+[+] Benchmarking took: 434.54129338264465
