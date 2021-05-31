@@ -5,6 +5,7 @@
 import argparse
 import os
 import pickle
+import shutil
 import time
 import csv
 from collections.abc import Iterable
@@ -319,8 +320,8 @@ def benchmark_application(application, result_dict):
     reference_prediction = None
     K.clear_session()
     if not store_models:
-        model_file = Path("~/.keras/models") / (application + "_weights_tf_dim_ordering_tf_kernels.h5")
-        os.remove(model_file)
+        model_dir = Path(os.path.expanduser("~/.keras/models"))
+        shutil.rmtree(model_dir)
 
 # Benchmarks the normal execution of a DNN - entire model unmodified
 def benchmark_normal_execution(selected_model, application):
@@ -532,8 +533,8 @@ if __name__ == "__main__":
                         help="Number of repeats for averaging (default: 10)")
     parser.add_argument('-dc', '--disablecuda', dest='cuda', action='store', type=str, required=False,
                         help="Disable cuda (default: False)")
-    parser.add_argument('-s', '--store-models', dest='store_models', action='store', type=str, required=False,
-                        help="Keep keras models on disk after execution (default: True)")
+    parser.add_argument('-s', '--store-models', dest='store_models', action='store', type=str2bool, required=False,
+                        default=True, help="Keep keras models on disk after execution (default: True)")
 
     args = parser.parse_args()
 
