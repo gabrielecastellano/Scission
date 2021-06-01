@@ -21,7 +21,7 @@ This fork extends Scission with the following features:
 - Each model is now benchmarked on a separate process to avoid keras memory leakage.
 - Removed the categories of hosts (device, edge, cloud) and the constraint of two split points: a model can now be split across any number of devices and without any predefined order. **[FEATURE NOT YET IMPLEMENTED]**
 
-### Original the research
+### Original research
 L. Lockhart, P. Harvey, P. Imai, P. Willis, and B. Varghese, "[Scission: Performance-driven and Context-aware Cloud-Edge Distribution of Deep Neural Networks](https://arxiv.org/pdf/2008.03523.pdf)," Proceedings of the 13th IEEE/ACM International Conference on Utility and Cloud Computing (UCC), 2020, pp. 257-268. . 
 
 ## About the software
