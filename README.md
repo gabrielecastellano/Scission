@@ -56,9 +56,16 @@ Benchmark plots and a csv report will be saved under the model_profiling folder.
 
 #### Docker
 
-The benchmark can also be run as a Docker container:
+The benchmark can also be run as a docker container:
 
-    sudo docker build -t scission/benchmark .
+    docker build -t scission/benchmark .
+
+If you need to fetch the updated code form git, you should specify the CACHEBUST argument as follows:
+
+    docker build -t scission --build-arg CACHEBUST=$(date +%s) .
+
+Run the docker container with:
+
     docker run -it --rm -v $(pwd):/opt/output scission/benchmark cloud 6700k cat.jpg -s False -o /opt/output
 
 Due to the volume bound at /opt/output, all the output files can be found on the usual locations after the run.

@@ -16,6 +16,10 @@ RUN git clone https://github.com/gabrielecastellano/Scission
 
 RUN mkdir /opt/output
 WORKDIR /opt/Scission
+
+ARG CACHEBUST=1
+# RUN git checkout -b dev
+# RUN git pull origin dev
 RUN git pull
 
 ENTRYPOINT python3 ./scission_benchmark.py $0 $@

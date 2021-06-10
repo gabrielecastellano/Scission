@@ -481,7 +481,9 @@ def create_individual_graphs(selected_model, application, individual_results):
 
 # Pickles and saves the benchmark data
 def save_data(folder, data, device_type, device_name):
-    with open(f"{folder}/benchmark_data/{device_type}-{device_name}.dat", "wb") as f:
+    file_name = f"{folder}/benchmark_data/{device_type}-{device_name}.dat"
+    print(f"Saving benchmark data at '{file_name}'...")
+    with open(file_name, "wb") as f:
         pickle.dump(data, f)
 
 
