@@ -56,9 +56,6 @@ from flopco_keras.flopco_keras import FlopCoKeras
 from multiprocessing import Process, Manager
 
 
-#matplotlib.use('Agg')
-
-
 class ModelResult:
     def __init__(self):
         self.model = ""
@@ -535,15 +532,15 @@ if __name__ == "__main__":
                         help="Disable cuda (default: False)")
     parser.add_argument('-s', '--store-models', dest='store_models', action='store', type=str2bool, required=False,
                         default=True, help="Keep keras models on disk after execution (default: True)")
+    parser.add_argument('-o', '--output-directory', dest='output_dir', action='store', type=str, required=False,
+                        help="If given, uses it as alternative base output folder (default: the project root folder")
 
     args = parser.parse_args()
-
 
     if args.repeats is not None:
         number_of_repeats = args.repeats
     else:
         number_of_repeats = 10
-
 
     if args.cuda is not None:
         disable_cuda = str2bool(args.cuda)
@@ -554,6 +551,11 @@ if __name__ == "__main__":
         store_models = False
     else:
         store_models = True
+
+    if args.output_dir is not None:
+        output_dir = args.output_dir
+    else:
+        output_dir = None
 
     device_type = args.platform
     device_name = args.name
@@ -646,14 +648,18 @@ if __name__ == "__main__":
         '''
 
     # plot results
-    abspath = os.path.abspath(__file__)
-    dname = os.path.dirname(abspath)
+    if output_dir is not None:
+        pass
+        dname = os.path.abspath(output_dir)
+    else:
+        abspath = os.path.abspath(__file__)
+        dname = os.path.dirname(abspath)
     Path(Path(dname) / "models_profiling").mkdir(parents=True, exist_ok=True)
     file_to_open = Path(dname) / "models_profiling" / f"{device_name}-stats.csv"
     with open(file_to_open, mode='w') as stats_file:
         stats_writer = csv.writer(stats_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         for application, results in result_dict.items():
-            output_sizes =  [result.output_size/1024/1024 for result in results]
+            output_sizes = [result.output_size/1024/1024 for result in results]
             flops = [result.flops for result in results]
             macs = [result.macs for result in results]
             params = [result.params for result in results]
