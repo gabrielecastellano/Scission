@@ -54,6 +54,15 @@ Finally, a cloud-6700k(GPU)-stats.csv file is generated with information about a
 
 Benchmark plots and a csv report will be saved under the model_profiling folder.
 
+#### Docker
+
+The benchmark can also be run as a Docker container:
+
+    sudo docker build -t scission/benchmark .
+    docker run -it --rm -v $(pwd):/opt/output scission/benchmark cloud 6700k cat.jpg -s False -o /opt/output
+
+Due to the volume bound at /opt/output, all the output files can be found on the usual locations after the run.
+
 ### Scission prediction
 
 #### Dependencies

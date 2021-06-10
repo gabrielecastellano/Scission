@@ -480,8 +480,8 @@ def create_individual_graphs(selected_model, application, individual_results):
 
 
 # Pickles and saves the benchmark data
-def save_data(data, device_type, device_name):
-    with open(f"{device_type}-{device_name}.dat", "wb") as f:
+def save_data(folder, data, device_type, device_name):
+    with open(f"{folder}/benchmark_data/{device_type}-{device_name}.dat", "wb") as f:
         pickle.dump(data, f)
 
 
@@ -533,7 +533,7 @@ if __name__ == "__main__":
     parser.add_argument('-s', '--store-models', dest='store_models', action='store', type=str2bool, required=False,
                         default=True, help="Keep keras models on disk after execution (default: True)")
     parser.add_argument('-o', '--output-directory', dest='output_dir', action='store', type=str, required=False,
-                        help="If given, uses it as alternative base output folder (default: the project root folder")
+                        help="If given, uses it as alternative base output folder (default: the project root folder)")
 
     args = parser.parse_args()
 
@@ -742,7 +742,7 @@ if __name__ == "__main__":
             plt.close(fig)
             plt.cla()
 
-    save_data(result_dict, device_type, device_name)
+    save_data(dname, result_dict, device_type, device_name)
 
     total_entire = time.time() - start_entire
     print(f"[+] Benchmarking took: {total_entire}")

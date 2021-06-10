@@ -14,6 +14,8 @@ RUN pip install matplotlib && \
 WORKDIR /opt
 RUN git clone https://github.com/gabrielecastellano/Scission
 
+RUN mkdir /opt/output
 WORKDIR /opt/Scission
+RUN git pull
 
 ENTRYPOINT python3 ./scission_benchmark.py $0 $@
