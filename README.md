@@ -28,8 +28,8 @@ L. Lockhart, P. Harvey, P. Imai, P. Willis, and B. Varghese, "[Scission: Perform
 
 ### Viewing Help
 ```python3 ./scission_benchmark.py --help```  
-```python3 ./scission_predict.py --help```
-```python3 ./plot_models.py --help```
+```python3 ./scission_predict.py --help```  
+```python3 ./plot_models.py --help```  
 
 ### Scission benchmarking
 
@@ -41,7 +41,7 @@ L. Lockhart, P. Harvey, P. Imai, P. Willis, and B. Varghese, "[Scission: Perform
 
 #### Benchmarking
 
-```python3 ./scission_benchmark.py cloud 6700k cat.jpeg```
+```python3 ./scission_benchmark.py cloud 6700k cat.jpg```
 
 An output file "cloud-6700k(GPU).dat" will be saved which contains the benchmark data for each benchmarked model.
 
