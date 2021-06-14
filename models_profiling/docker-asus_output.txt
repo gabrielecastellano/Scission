@@ -1,0 +1,246 @@
+gabriele@DESKTOP-90JL7L4:~/Scission$ sudo docker run -it --rm -v $(pwd):/opt/output scission device docker-asus cat.jpg -s False -o /opt/output
+2021-06-10 15:22:22.241141: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-06-10 15:22:22.241296: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-06-10 15:22:25.358179: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:22:25.358564: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:22:25.358953: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:22:25.361150: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-06-10 15:22:25.730868: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+2021-06-10 15:22:25.953330: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+2021-06-10 15:22:26.150021: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg19/vgg19_weights_tf_dim_ordering_tf_kernels.h5
+574717952/574710816 [==============================] - 54s 0us/step
+2021-06-10 15:23:22.097143: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+[+] vgg19 -  Layers: 26 - Split Points: 25 - Loading took: 57.3789005279541
+[-] Benchmarking normal execution - 6.401015996932983
+[-] Benchmarking individual layers - 7.316650152206421
+[-] NE: 0.2522768974304199 - SUM: 0.2547544240951538 - % Change: 0.9820664079703221
+[+] Benchmarking vgg19 took: 71.09837007522583
+
+2021-06-10 15:23:36.712185: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:23:36.713522: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:23:36.714346: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:23:36.719525: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/xception/xception_weights_tf_dim_ordering_tf_kernels.h5
+91889664/91884032 [==============================] - 12s 0us/step
+[+] xception -  Layers: 134 - Split Points: 14 - Loading took: 14.938817977905273
+[-] Benchmarking normal execution - 5.210090398788452
+[-] Benchmarking individual layers - 5.726335525512695
+[-] NE: 0.23828661441802979 - SUM: 0.23896586894989014 - % Change: 0.2850577794809368
+[+] Benchmarking xception took: 25.878604888916016
+
+2021-06-10 15:24:02.544756: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:24:02.544850: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:24:02.544981: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:24:02.545492: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+102973440/102967424 [==============================] - 10s 0us/step
+[+] resnet50 -  Layers: 177 - Split Points: 24 - Loading took: 11.893928289413452
+[-] Benchmarking normal execution - 4.0635130405426025
+[-] Benchmarking individual layers - 5.1039183139801025
+[-] NE: 0.17996668815612793 - SUM: 0.20009005069732666 - % Change: 11.18171520928415
+[+] Benchmarking resnet50 took: 21.064751148223877
+
+2021-06-10 15:24:23.655177: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:24:23.655318: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:24:23.655408: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:24:23.655901: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet101_weights_tf_dim_ordering_tf_kernels.h5
+179650560/179648224 [==============================] - 17s 0us/step
+[+] resnet101 -  Layers: 347 - Split Points: 41 - Loading took: 20.114694833755493
+[-] Benchmarking normal execution - 7.2682411670684814
+[-] Benchmarking individual layers - 9.459112882614136
+[-] NE: 0.32799863815307617 - SUM: 0.36727750301361084 - % Change: 11.975313398162129
+[+] Benchmarking resnet101 took: 36.84816837310791
+
+2021-06-10 15:25:00.553441: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:25:00.553567: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:25:00.553684: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:25:00.554302: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet152_weights_tf_dim_ordering_tf_kernels.h5
+242900992/242900224 [==============================] - 24s 0us/step
+[+] resnet152 -  Layers: 517 - Split Points: 58 - Loading took: 29.222330808639526
+[-] Benchmarking normal execution - 10.757595539093018
+[-] Benchmarking individual layers - 13.89526104927063
+[-] NE: 0.5014654397964478 - SUM: 0.5442184209823608 - % Change: 8.525608704613248
+[+] Benchmarking resnet152 took: 53.884308099746704
+
+2021-06-10 15:25:54.498745: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:25:54.498864: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:25:54.498901: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:25:54.499558: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50v2_weights_tf_dim_ordering_tf_kernels.h5
+102875136/102869336 [==============================] - 13s 0us/step
+[+] resnet50v2 -  Layers: 192 - Split Points: 16 - Loading took: 15.046057939529419
+[-] Benchmarking normal execution - 3.812547206878662
+[-] Benchmarking individual layers - 4.612708330154419
+[-] NE: 0.1685020923614502 - SUM: 0.18241167068481445 - % Change: 8.25484012004263
+[+] Benchmarking resnet50v2 took: 23.475246906280518
+
+2021-06-10 15:26:18.012980: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:26:18.013082: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:26:18.013119: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:26:18.013746: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet101v2_weights_tf_dim_ordering_tf_kernels.h5
+179519488/179518384 [==============================] - 20s 0us/step
+[+] resnet101v2 -  Layers: 379 - Split Points: 16 - Loading took: 23.679721117019653
+[-] Benchmarking normal execution - 6.990046262741089
+[-] Benchmarking individual layers - 8.452999591827393
+[-] NE: 0.31504690647125244 - SUM: 0.32853519916534424 - % Change: 4.2813601457542205
+[+] Benchmarking resnet101v2 took: 39.13034415245056
+
+2021-06-10 15:26:57.192789: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:26:57.192896: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:26:57.192999: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:26:57.193504: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet152v2_weights_tf_dim_ordering_tf_kernels.h5
+242753536/242745792 [==============================] - 24s 0us/step
+[+] resnet152v2 -  Layers: 566 - Split Points: 16 - Loading took: 28.7021267414093
+[-] Benchmarking normal execution - 10.574369668960571
+[-] Benchmarking individual layers - 12.44505262374878
+[-] NE: 0.4768131971359253 - SUM: 0.4953702688217163 - % Change: 3.891895567752286
+[+] Benchmarking resnet152v2 took: 51.730602502822876
+
+2021-06-10 15:27:48.978854: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:27:48.978956: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:27:48.979130: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:27:48.979758: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/inception_v3/inception_v3_weights_tf_dim_ordering_tf_kernels.h5
+96116736/96112376 [==============================] - 9s 0us/step
+[+] inception_v3 -  Layers: 313 - Split Points: 19 - Loading took: 11.625505924224854
+[-] Benchmarking normal execution - 5.761402606964111
+[-] Benchmarking individual layers - 6.087448835372925
+[-] NE: 0.27107393741607666 - SUM: 0.23555207252502441 - % Change: -13.104124000135457
+[+] Benchmarking inception_v3 took: 23.479954719543457
+
+2021-06-10 15:28:12.498438: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:28:12.498550: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:28:12.498679: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:28:12.499267: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/inception_resnet_v2/inception_resnet_v2_weights_tf_dim_ordering_tf_kernels.h5
+225214464/225209952 [==============================] - 21s 0us/step
+[+] inceptionresnet_v2 -  Layers: 782 - Split Points: 61 - Loading took: 26.20032000541687
+[-] Benchmarking normal execution - 13.416272640228271
+[-] Benchmarking individual layers - 16.234865427017212
+[-] NE: 0.6230769157409668 - SUM: 0.6228601932525635 - % Change: -0.0347826220051104
+[+] Benchmarking inceptionresnet_v2 took: 55.8648145198822
+
+2021-06-10 15:29:08.420567: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:29:08.420693: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:29:08.420748: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:29:08.421325: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet/mobilenet_1_0_224_tf.h5
+17227776/17225924 [==============================] - 2s 0us/step
+[+] mobilenet -  Layers: 92 - Split Points: 91 - Loading took: 2.6433558464050293
+[-] Benchmarking normal execution - 1.7432990074157715
+[-] Benchmarking individual layers - 2.7447025775909424
+[-] NE: 0.07480323314666748 - SUM: 0.0810096263885498 - % Change: 8.29695854150232
+[+] Benchmarking mobilenet took: 7.133150100708008
+
+2021-06-10 15:29:15.583118: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:29:15.583221: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:29:15.583351: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:29:15.583982: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-06-10 15:29:15.805116: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+2021-06-10 15:29:15.997481: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+2021-06-10 15:29:16.134484: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg16/vgg16_weights_tf_dim_ordering_tf_kernels.h5
+553467904/553467096 [==============================] - 52s 0us/step
+2021-06-10 15:30:08.709040: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 411041792 exceeds 10% of free system memory.
+[+] vgg16 -  Layers: 23 - Split Points: 22 - Loading took: 53.39526343345642
+[-] Benchmarking normal execution - 5.671908617019653
+[-] Benchmarking individual layers - 5.150152683258057
+[-] NE: 0.2428654432296753 - SUM: 0.22294402122497559 - % Change: -8.202658122036837
+[+] Benchmarking vgg16 took: 64.2181248664856
+
+2021-06-10 15:30:19.881981: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:30:19.882069: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:30:19.882158: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:30:19.882864: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v2/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224.h5
+14540800/14536120 [==============================] - 1s 0us/step
+[+] mobilenetv2 -  Layers: 156 - Split Points: 65 - Loading took: 2.955228805541992
+[-] Benchmarking normal execution - 2.6108264923095703
+[-] Benchmarking individual layers - 3.720672607421875
+[-] NE: 0.11598265171051025 - SUM: 0.12351393699645996 - % Change: 6.4934584395842165
+[+] Benchmarking mobilenetv2 took: 9.289990186691284
+
+2021-06-10 15:30:29.206319: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:30:29.206432: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:30:29.206604: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:30:29.207127: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/densenet/densenet121_weights_tf_dim_ordering_tf_kernels.h5
+33193984/33188688 [==============================] - 3s 0us/step
+[+] densenet121 -  Layers: 429 - Split Points: 22 - Loading took: 6.760187149047852
+[-] Benchmarking normal execution - 6.385657548904419
+[-] Benchmarking individual layers - 7.72455096244812
+[-] NE: 0.29389774799346924 - SUM: 0.29049181938171387 - % Change: -1.1588821741604676
+[+] Benchmarking densenet121 took: 20.87883687019348
+
+2021-06-10 15:30:50.109604: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:30:50.109701: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:30:50.109845: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:30:50.110271: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/densenet/densenet169_weights_tf_dim_ordering_tf_kernels.h5
+58548224/58541896 [==============================] - 6s 0us/step
+[+] densenet169 -  Layers: 597 - Split Points: 22 - Loading took: 10.00695538520813
+[-] Benchmarking normal execution - 8.541413307189941
+[-] Benchmarking individual layers - 10.291689395904541
+[-] NE: 0.39695632457733154 - SUM: 0.3940316438674927 - % Change: -0.736776448379544
+[+] Benchmarking densenet169 took: 28.851146936416626
+
+2021-06-10 15:31:18.997774: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:31:18.997857: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:31:18.997892: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:31:18.998482: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/densenet/densenet201_weights_tf_dim_ordering_tf_kernels.h5
+82526208/82524592 [==============================] - 9s 0us/step
+[+] densenet201 -  Layers: 709 - Split Points: 22 - Loading took: 14.370595455169678
+[-] Benchmarking normal execution - 10.736302375793457
+[-] Benchmarking individual layers - 12.795706033706665
+[-] NE: 0.5004916191101074 - SUM: 0.4909607172012329 - % Change: -1.904307993372754
+[+] Benchmarking densenet201 took: 37.91660118103027
+
+2021-06-10 15:31:56.950523: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:31:56.950628: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:31:56.950727: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:31:56.951394: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/nasnet/NASNet-large.h5
+359751680/359748576 [==============================] - 47s 0us/step
+[+] nasnetlarge -  Layers: 1041 - Split Points: 5 - Loading took: 54.731096267700195
+[-] Benchmarking normal execution - 27.053990840911865
+[-] Benchmarking individual layers - 29.989439249038696
+[-] NE: 1.2443441152572632 - SUM: 1.2544856071472168 - % Change: 0.8150070198111479
+[+] Benchmarking nasnetlarge took: 111.79504537582397
+
+2021-06-10 15:33:48.819359: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-06-10 15:33:48.819481: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-06-10 15:33:48.819603: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (0da63c146862): /proc/driver/nvidia/version does not exist
+2021-06-10 15:33:48.820382: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/nasnet/NASNet-mobile.h5
+24231936/24227760 [==============================] - 2s 0us/step
+[+] nasnetmobile -  Layers: 771 - Split Points: 5 - Loading took: 8.278465032577515
+[-] Benchmarking normal execution - 7.568797826766968
+[-] Benchmarking individual layers - 10.274657726287842
+[-] NE: 0.35127103328704834 - SUM: 0.35312390327453613 - % Change: 0.5274758838351659
+[+] Benchmarking nasnetmobile took: 26.13582730293274
+
+[+] Benchmarking took: 744.4313750267029

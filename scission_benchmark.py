@@ -45,6 +45,7 @@ from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess_i
 from tensorflow.keras.applications.vgg19 import VGG19
 from tensorflow.keras.applications.vgg19 import preprocess_input as preprocess_input_vgg19
 from tensorflow.keras.applications.xception import Xception
+from tensorflow.keras.applications.xception import preprocess_input as preprocess_input_xception
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing.image import load_img
 
@@ -169,7 +170,7 @@ def create_valid_splits(model):
 
 
 # Pre-processes the input image for a specific model
-def preprocess_input(application):
+def preprocess_input(application, batch_size=1):
     global input_image
     image = None
     file_name = input_image
@@ -179,73 +180,74 @@ def preprocess_input(application):
     if application == "xception":
         image = load_img(file_to_open, target_size=(299, 299))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
-        image = preprocess_input_vgg16(image)
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
+        image = preprocess_input_xception(image)
     elif application == "vgg16":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_vgg16(image)
     elif application == "vgg19":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
         image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_vgg19(image)
     elif application == "resnet50" or application == "resnet101" or application == "resnet152":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_resnet(image)
     elif application == "resnet50v2" or application == "resnet101v2" or application == "resnet152v2":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_resnetV2(image)
     elif application == "inception_v3":
         image = load_img(file_to_open, target_size=(299, 299))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_inceptionv3(image)
     elif application == "inceptionresnet_v2":
         image = load_img(file_to_open, target_size=(299, 299))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_inceptionresnetv2(image)
     elif application == "mobilenet":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_mobilenet(image)
     elif application == "mobilenetv2":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_vgg16(image)
     elif application == "densenet121" or application == "densenet169" or application == "densenet201":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_densenet(image)
     elif application == "nasnetlarge":
         image = load_img(file_to_open, target_size=(331, 331))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_nasnetlarge(image)
     elif application == "nasnetmobile":
         image = load_img(file_to_open, target_size=(224, 224))
         image = img_to_array(image)
-        image = image.reshape(
-            (1, image.shape[0], image.shape[1], image.shape[2]))
+        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = np.tile(image, (batch_size, 1, 1, 1))
         image = preprocess_input_nasnetmobile(image)
     else:
         print("[+] Application not found.")
@@ -253,7 +255,16 @@ def preprocess_input(application):
     return image
 
 
-def benchmark_application(application, result_dict):
+'''
+def predict(model, _input, batch_size=1):
+    if batch_size == 1:
+        return model(_input, training=False)
+    else:
+        return model.predict(input, batch_size=batch_size)
+'''
+
+
+def benchmark_application(application, result_dict, batch_size=1):
     global reference_prediction
 
     start_application = time.time()
@@ -272,7 +283,7 @@ def benchmark_application(application, result_dict):
 
     # Normal Execution Benchmark Start
     start_normal = time.time()
-    normal_result = benchmark_normal_execution(selected_model, application)
+    normal_result = benchmark_normal_execution(selected_model, application, batch_size)
     total_normal = time.time() - start_normal
     print(f" - {total_normal}")
 
@@ -281,7 +292,7 @@ def benchmark_application(application, result_dict):
 
     # Individual Layer Benchmark Start
     start_individual = time.time()
-    individual_results = benchmark_individual_execution(selected_model, application)
+    individual_results = benchmark_individual_execution(selected_model, application, batch_size)
     total_individual = time.time() - start_individual
 
     print(f" - {total_individual}")
@@ -320,8 +331,9 @@ def benchmark_application(application, result_dict):
         model_dir = Path(os.path.expanduser("~/.keras/models"))
         shutil.rmtree(model_dir)
 
+
 # Benchmarks the normal execution of a DNN - entire model unmodified
-def benchmark_normal_execution(selected_model, application):
+def benchmark_normal_execution(selected_model, application, batch_size=1):
     global number_of_repeats
     global reference_prediction
 
@@ -338,18 +350,19 @@ def benchmark_normal_execution(selected_model, application):
     normal_result.preprocess_time = total_preprocess
 
     start_first = time.time()
-    selected_model(image, training=False)
+    selected_model.predict(image, batch_size=batch_size)
+    # selected_model(image, training=False)
     total_first = time.time() - start_first
     normal_result.first_prediction = total_first
 
     # perform some runs to warm up the model
     for _ in range(10):
-        selected_model(image, training=False)
+        selected_model.predict(image, batch_size=batch_size)
 
     t = []
     for _ in range(number_of_repeats):
         start_second = time.time()
-        reference_prediction = selected_model(image, training=False)
+        reference_prediction = selected_model.predict(image, batch_size=batch_size)
         t.append(time.time() - start_second)
 
     normal_result.second_prediction = np.percentile(t, 50)
@@ -361,8 +374,9 @@ def benchmark_normal_execution(selected_model, application):
 
     return normal_result
 
+
 # Benchmarks the indiviual layers/blocks of a DNN
-def benchmark_individual_execution(selected_model, application):
+def benchmark_individual_execution(selected_model, application, batch_size=1):
     global number_of_repeats
     global reference_prediction
 
@@ -397,16 +411,16 @@ def benchmark_individual_execution(selected_model, application):
         new_model = get_model(selected_model, first_point, split_point)
 
         output = previous_input
-        previous_input = new_model(previous_input, training=False)
+        previous_input = selected_model.predict(image, batch_size=batch_size)
 
         # perform some runs to warm up the model
         for _ in range(10):
-            new_model(output, training=False)
+            selected_model.predict(image, batch_size=batch_size)
 
         t = []
         for x in range(number_of_repeats):
             start_second = time.time()
-            output_final = new_model(output, training=False)
+            output_final = selected_model.predict(image, batch_size=batch_size)
             t.append(time.time() - start_second)
 
         result.second_prediction = np.percentile(t, 50)
@@ -417,7 +431,7 @@ def benchmark_individual_execution(selected_model, application):
         individual_results.append(result)
         del result
 
-    if reference_prediction.numpy().all() != output_final.numpy().all():
+    if reference_prediction.all() != output_final.all():
         print("[WARNING] PREDICATION ACCURACY DIFFERS FROM NORMAL EXECUTION [WARNING]")
 
     return individual_results
@@ -480,8 +494,8 @@ def create_individual_graphs(selected_model, application, individual_results):
 
 
 # Pickles and saves the benchmark data
-def save_data(folder, data, device_type, device_name):
-    file_name = f"{folder}/benchmark_data/{device_type}-{device_name}.dat"
+def save_data(folder, data, device_type, device_name, batch_size):
+    file_name = f"{folder}/benchmark_data/{device_type}-{device_name}-b{batch_size}.dat"
     print(f"Saving benchmark data at '{file_name}'...")
     with open(file_name, "wb") as f:
         pickle.dump(data, f)
@@ -536,6 +550,8 @@ if __name__ == "__main__":
                         default=True, help="Keep keras models on disk after execution (default: True)")
     parser.add_argument('-o', '--output-directory', dest='output_dir', action='store', type=str, required=False,
                         help="If given, uses it as alternative base output folder (default: the project root folder)")
+    parser.add_argument('-b', '--batch-size', dest='batch_size', action='store', type=int, required=False, default=1,
+                        help="inference batch size (default: 1)")
 
     args = parser.parse_args()
 
@@ -559,6 +575,8 @@ if __name__ == "__main__":
     else:
         output_dir = None
 
+    batch_size = args.batch_size
+
     device_type = args.platform
     device_name = args.name
     input_image = args.input
@@ -579,7 +597,7 @@ if __name__ == "__main__":
         while application not in result_dict:
             layer_outputs = {}
 
-            p = Process(target=benchmark_application, args=(application, result_dict))
+            p = Process(target=benchmark_application, args=(application, result_dict, batch_size))
             p.start()
             p.join()
 
@@ -657,7 +675,7 @@ if __name__ == "__main__":
         abspath = os.path.abspath(__file__)
         dname = os.path.dirname(abspath)
     Path(Path(dname) / "models_profiling").mkdir(parents=True, exist_ok=True)
-    file_to_open = Path(dname) / "models_profiling" / f"{device_name}-stats.csv"
+    file_to_open = Path(dname) / "models_profiling" / f"{device_name}-stats-b{batch_size}.csv"
     with open(file_to_open, mode='w') as stats_file:
         stats_writer = csv.writer(stats_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         for application, results in result_dict.items():
@@ -708,7 +726,7 @@ if __name__ == "__main__":
                 axis.set_major_formatter(ScalarFormatter())
 
             Path(Path(dname) / "models_profiling" / application).mkdir(parents=True, exist_ok=True)
-            file_to_open = Path(dname) / "models_profiling" / application / f"{device_name}-{application}-performance.png"
+            file_to_open = Path(dname) / "models_profiling" / application / f"{device_name}-{application}-performance-b{batch_size}.png"
             #plt.tight_layout()
             #ratio = len(ind)/25
             #plt.figure(figsize=(1*ratio, 1))
@@ -738,13 +756,13 @@ if __name__ == "__main__":
             for axis in [ax1.yaxis]:
                 axis.set_major_formatter(ScalarFormatter())
 
-            file_to_open = Path(dname) / "models_profiling" / application / f"{application}-stats.png"
+            file_to_open = Path(dname) / "models_profiling" / application / f"{application}-stats-b{batch_size}.png"
             plt.autoscale(enable=True)
             plt.savefig(file_to_open, bbox_inches='tight')
             plt.close(fig)
             plt.cla()
 
-    save_data(dname, result_dict, device_type, device_name)
+    save_data(dname, result_dict, device_type, device_name, batch_size)
 
     total_entire = time.time() - start_entire
     print(f"[+] Benchmarking took: {total_entire}")
