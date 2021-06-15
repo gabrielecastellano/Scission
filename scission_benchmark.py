@@ -345,7 +345,7 @@ def benchmark_normal_execution(selected_model, application, batch_size=1):
     print("[-] Benchmarking normal execution", end='', flush=True)
 
     start_preprocess = time.time()
-    image = preprocess_input(application)
+    image = preprocess_input(application, batch_size=batch_size)
     total_preprocess = time.time() - start_preprocess
     normal_result.preprocess_time = total_preprocess
 
@@ -384,12 +384,12 @@ def benchmark_individual_execution(selected_model, application, batch_size=1):
 
     individual_results = []
 
-    image = preprocess_input(application)
+    image = preprocess_input(application, batch_size=batch_size)
     np.save("fsize", image)
     input_size = os.stat("fsize.npy").st_size
     os.remove("fsize.npy")
 
-    previous_input = image
+    input_tensor = image
 
     split_points = create_valid_splits(selected_model)
 
@@ -410,28 +410,30 @@ def benchmark_individual_execution(selected_model, application, batch_size=1):
 
         new_model = get_model(selected_model, first_point, split_point)
 
-        output = previous_input
-        previous_input = selected_model.predict(image, batch_size=batch_size)
+        output_tensor = new_model.predict(input_tensor, batch_size=batch_size)
 
         # perform some runs to warm up the model
         for _ in range(10):
-            selected_model.predict(image, batch_size=batch_size)
+            new_model.predict(input_tensor, batch_size=batch_size)
 
         t = []
         for x in range(number_of_repeats):
             start_second = time.time()
-            output_final = selected_model.predict(image, batch_size=batch_size)
+            new_model.predict(input_tensor, batch_size=batch_size)
             t.append(time.time() - start_second)
 
         result.second_prediction = np.percentile(t, 50)
 
-        np.save("fsize", output_final)
+        np.save("fsize", output_tensor)
         result.output_size = os.stat("fsize.npy").st_size
+        os.remove("fsize.npy")
 
         individual_results.append(result)
         del result
 
-    if reference_prediction.all() != output_final.all():
+        input_tensor = output_tensor
+
+    if reference_prediction.all() != output_tensor.all():
         print("[WARNING] PREDICATION ACCURACY DIFFERS FROM NORMAL EXECUTION [WARNING]")
 
     return individual_results
