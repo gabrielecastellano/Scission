@@ -758,7 +758,7 @@ if __name__ == "__main__":
             for axis in [ax1.yaxis]:
                 axis.set_major_formatter(ScalarFormatter())
 
-            file_to_open = Path(dname) / "models_profiling" / application / f"{application}-stats-b{batch_size}.png"
+            file_to_open = Path(dname) / "models_profiling" / application / f"{application}-stats.png"
             plt.autoscale(enable=True)
             plt.savefig(file_to_open, bbox_inches='tight')
             plt.close(fig)
